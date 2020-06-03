@@ -5,9 +5,9 @@ import SEO from "@components/seo"
 
 const Home = () => (
   <Layout>
-    <SEO title=""/>
-    <h1>Home</h1>
-    <p>Welcome home</p>
+    <SEO title="About"/>
+    <h1>About</h1>
+    <p>this is about me hasiduadniadseifnslkfmsdlkkfl</p>
   </Layout>
 )
 

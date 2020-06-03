@@ -6,11 +6,18 @@
  */
 
 import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import "@styles/global.css"
+import Toggle from "@components/themeToggler"
+
+const StyledDiv = styled.div`
+  margin: 0 auto;
+  max-width: 900px;
+  color: var(--textNormal);
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,21 +32,30 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <StyledDiv>
+        <header
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Link to="/">
+            <h3 style={{ display: "inline-block" }}>Parker Rowe</h3>
+          </Link>
+
+          <div>
+            <Link style={{ display: "inline-block" }} to="/about/">
+              About
+            </Link>
+            <Toggle style={{ display: "inline-block" }} />
+          </div>
+        </header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}, Built with ❤ by Parker Rowe
         </footer>
-      </div>
+      </StyledDiv>
     </>
   )
 }
