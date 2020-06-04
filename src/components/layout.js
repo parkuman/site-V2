@@ -10,8 +10,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import "@styles/global.css"
-import Toggle from "@components/themeToggler"
 
 const StyledDiv = styled.div`
   margin: 0 auto;
@@ -48,7 +46,6 @@ const Layout = ({ children }) => {
             <Link style={{ display: "inline-block" }} to="/about/">
               About
             </Link>
-            <Toggle style={{ display: "inline-block" }} />
           </div>
         </header>
         <main>{children}</main>
