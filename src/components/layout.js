@@ -10,11 +10,12 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
+import DarkToggle from "@components/DarkToggle"
+import GlobalStyle from "@styles/GlobalStyle"
 
-const StyledDiv = styled.div`
+const StyledSection = styled.section`
   margin: 0 auto;
   max-width: 900px;
-  color: var(--textNormal);
 `
 
 const Layout = ({ children }) => {
@@ -29,31 +30,32 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <StyledDiv>
-        <header
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Link to="/">
-            <h3 style={{ display: "inline-block" }}>Parker Rowe</h3>
-          </Link>
+    <div id="root">
+      <GlobalStyle />
 
-          <div>
-            <Link style={{ display: "inline-block" }} to="/about/">
-              About
-            </Link>
-          </div>
-        </header>
+      <header
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link to="/">
+          <h3 style={{ display: "inline-block" }}>Parker Rowe</h3>
+        </Link>
+
+        <div>
+          <DarkToggle></DarkToggle>
+          <Link style={{ display: "inline-block" }} to="/about/">
+            About
+          </Link>
+        </div>
+      </header>
+      <StyledSection>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with ❤ by Parker Rowe
-        </footer>
-      </StyledDiv>
-    </>
+      </StyledSection>
+      <footer>© {new Date().getFullYear()}, Built with ❤ by Parker Rowe</footer>
+    </div>
   )
 }
 
