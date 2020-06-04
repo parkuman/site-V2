@@ -5,18 +5,18 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
-import PropTypes from "prop-types"
+import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import DarkToggle from "@components/DarkToggle"
-import GlobalStyle from "@styles/GlobalStyle"
+import DarkToggle from "@components/DarkToggle";
+import GlobalStyle from "@styles/GlobalStyle";
 
 const StyledSection = styled.section`
   margin: 0 auto;
   max-width: 900px;
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div id="root">
@@ -56,11 +56,11 @@ const Layout = ({ children }) => {
       </StyledSection>
       <footer>© {new Date().getFullYear()}, Built with ❤ by Parker Rowe</footer>
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

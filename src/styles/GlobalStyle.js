@@ -1,6 +1,6 @@
-import theme from "@styles/theme"
-import FontFaces from "@styles/fonts"
-import { createGlobalStyle } from "styled-components"
+import theme from "@styles/theme";
+import FontFaces from "@styles/fonts";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 ${FontFaces};
@@ -16,6 +16,8 @@ html {
    box-sizing: inherit;
 }
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     width: 100%;
     min-height: 100%;
@@ -32,6 +34,6 @@ body {
 footer {
     font-family: ${theme.fonts.IBMPlexMono};
 }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
