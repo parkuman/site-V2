@@ -26,8 +26,8 @@ body {
     color: ${theme.colors.richBlack};
 
     &.dark-mode {
-        background: ${theme.colors.darkBlue};
-        color: ${theme.colors.candyPink};
+        background: ${theme.colors.darkGrey};
+        color: white;
     } 
     transition: ${theme.transition};
     

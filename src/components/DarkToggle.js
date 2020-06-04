@@ -10,7 +10,7 @@ const Dark = (props) => {
             style={{ display: "inline", cursor: "pointer" }}
             onClick={handleClick}
         >
-            Dark
+            🌚
         </div>
     );
 };
@@ -24,7 +24,7 @@ const Light = (props) => {
             style={{ display: "inline", cursor: "pointer" }}
             onClick={handleClick}
         >
-            Light
+             /💡 •
         </div>
     );
 };

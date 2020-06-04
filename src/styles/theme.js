@@ -1,11 +1,12 @@
 const theme = {
     colors: {
-        lightBlue: "#9FFFF5",
+        lightBlue: "#41A5EE",
         aquaMarine: "#7cffc4",
         richBlack: "#070707",
         floralWhite: "#fff8f0",
         darkBlue: "#0A014F",
         candyPink: "#EF767A",
+        darkGrey: "#212121",
     },
 
     fonts: {
