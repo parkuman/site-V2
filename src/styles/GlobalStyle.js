@@ -1,6 +1,6 @@
 import theme from "@styles/theme";
 import FontFaces from "@styles/fonts";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 ${FontFaces};
@@ -26,11 +26,17 @@ body {
     color: ${theme.colors.richBlack};
 
     &.dark-mode {
-        background: ${theme.colors.queenBlue};
-        color: ${theme.colors.aquaMarine};
+        background: ${theme.colors.darkBlue};
+        color: ${theme.colors.candyPink};
     } 
-    transition: ${theme.transition}
+    transition: ${theme.transition};
+    
 } 
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 footer {
     font-family: ${theme.fonts.IBMPlexMono};

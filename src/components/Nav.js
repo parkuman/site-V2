@@ -29,6 +29,7 @@ const StyledNavItems = styled.ul`
         display: inline;
         padding: 0 10px;
     }
+    
 `;
 
 const NavItems = () => {

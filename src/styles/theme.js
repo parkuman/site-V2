@@ -4,7 +4,7 @@ const theme = {
         aquaMarine: "#7cffc4",
         richBlack: "#070707",
         floralWhite: "#fff8f0",
-        queenBlue: "#456990",
+        darkBlue: "#0A014F",
         candyPink: "#EF767A",
     },
 
