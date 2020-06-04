@@ -1,44 +1,52 @@
+const config = require("./src/config");
+
 module.exports = {
-  siteMetadata: {
-    title: `Hello`,
-    description: `Parker Rowe's portfolio site! I like tech, development and long walks down the street.`,
-    author: `Parker Rowe`,
-  },
-  plugins: [
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-plugin-use-dark-mode",
-      options: {
-        classNameDark: "dark-mode",
-        classNameLight: "light-mode",
-        storageKey: "darkMode",
-        minify: true,
-      },
+    siteMetadata: {
+        title: config.siteTitle,
+        description: config.siteDescription,
+        author: config.name,
+
+        siteMetadata: {
+            title: config.siteTitle,
+            siteUrl: config.siteUrl,
+            description: config.siteDescription,
+        },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
-}
+    plugins: [
+        `gatsby-plugin-styled-components`,
+        `gatsby-plugin-react-helmet`,
+        {
+            resolve: "gatsby-plugin-use-dark-mode",
+            options: {
+                classNameDark: "dark-mode",
+                classNameLight: "light-mode",
+                storageKey: "darkMode",
+                minify: true,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
+            },
+        },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `gatsby-starter-default`,
+                short_name: `starter`,
+                start_url: `/`,
+                background_color: `#663399`,
+                theme_color: `#663399`,
+                display: `minimal-ui`,
+                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+            },
+        },
+        // this (optional) plugin enables Progressive Web App + Offline functionality
+        // To learn more, visit: https://gatsby.dev/offline
+        // `gatsby-plugin-offline`,
+    ],
+};

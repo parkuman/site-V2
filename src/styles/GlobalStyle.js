@@ -24,6 +24,7 @@ body {
     font-family: ${theme.fonts.IBMPlexSans};
     background: ${theme.colors.floralWhite};
     color: ${theme.colors.richBlack};
+
     &.dark-mode {
         background: ${theme.colors.queenBlue};
         color: ${theme.colors.aquaMarine};
@@ -33,6 +34,11 @@ body {
 
 footer {
     font-family: ${theme.fonts.IBMPlexMono};
+    text-align: center;
+    
+        text-shadow: none;
+    background-image: none;
+    
 }
 `;
 
