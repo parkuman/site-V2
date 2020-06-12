@@ -6,9 +6,7 @@
  */
 
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import Nav from "@components/Nav";
 import Left from "@components/Left";
@@ -19,7 +17,7 @@ import GlobalStyle from "@styles/GlobalStyle";
 
 const StyledSection = styled.section`
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1200px;
 `;
 
 const Space = styled.div`
@@ -28,16 +26,6 @@ const Space = styled.div`
 `;
 
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `);
-
     return (
         <div id="root">
             <GlobalStyle />
@@ -51,10 +39,6 @@ const Layout = ({ children }) => {
             <Footer />
         </div>
     );
-};
-
-Layout.propTypes = {
-    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

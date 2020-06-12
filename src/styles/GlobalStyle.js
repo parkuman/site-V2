@@ -31,6 +31,9 @@ body {
     background: var(--bg-color);
     color: var(--text-color-primary);
 
+    &.smooth-transition * {
+        transition: ${theme.transition};
+    }
     &.dark-mode {
         --bg-color: ${theme.colors.darkGrey};
         --text-color-primary: ${theme.colors.almostWhite};
