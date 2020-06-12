@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 import config from "../config";
 import DarkToggle from "@components/DarkToggle";
-import Face from "@images/face.png";
+import Logo from "@images/logo.png";
 import theme from "@styles/theme";
+import { OutlineButton } from "@components/Buttons";
 
 const StyledNav = styled.nav`
     display: flex;
@@ -17,12 +18,9 @@ const StyledNav = styled.nav`
     width: 100%;
     padding: 10px 40px;
     height: 70px;
+    background: var(--bg-color);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     font-family: ${theme.fonts.IBMPlexMono};
-
-    & img {
-        height: 50px;
-    }
 `;
 
 const StyledNavItems = styled.ul`
@@ -30,7 +28,10 @@ const StyledNavItems = styled.ul`
     & li {
         display: inline;
         padding: 0 10px;
-        &:nth-of-type(1):hover ~ .underbar {
+        &:last-of-type {
+            margin-right: 10px
+        }
+        /* &:nth-of-type(1):hover ~ .underbar {
             left: 75px;
             width: 45px;
             background: rgba(100, 100, 200, 1);
@@ -38,47 +39,50 @@ const StyledNavItems = styled.ul`
         &:nth-of-type(2):hover ~ .underbar {
             left: 140px;
             width: 90px;
-            background: #FF8585;
+            background: #ff8585;
         }
         &:nth-of-type(3):hover ~ .underbar {
             left: 245px;
             width: 40px;
-            background: #FFE071;
+            background: #ffe071;
         }
         &:nth-of-type(4):hover ~ .underbar {
             left: 300px;
             width: 65px;
-            background: #41A5EE;
-        }
+            background: #41a5ee;
+        } */
         cursor: pointer;
     }
 
-    & .underbar {
+    /* & .underbar {
         width: 0;
         height: 5px;
         position: relative;
         left: 75px;
         background: rgba(100, 100, 200, 0);
         -webkit-transition: 0.5s ease;
-    }
+    } */
 `;
 
-const Underbar = styled.div`
-    width: 0;
-    height: 5px;
-    background: rgba(100, 100, 200, 0);
-    -webkit-transition: 0.5s ease;
+const StyledNumber = styled.span`
+    color: var(--accent-color);
+`;
+
+const StyledLogo = styled.img`
+    height: 70px;
 `;
 
 const NavItems = () => {
     return (
         <StyledNavItems>
             <DarkToggle />
-            {config.navLinks.map((item) => (
+            {config.navLinks.map((item, key) => (
                 <li>
+                    <StyledNumber>0{key + 1}. </StyledNumber>
                     <Link to={item.url}>{item.name}</Link>
                 </li>
             ))}
+            <OutlineButton text="Resume" href="resume.pdf"></OutlineButton>
             <div className="underbar"></div>
         </StyledNavItems>
     );
@@ -88,7 +92,7 @@ const Nav = () => {
     return (
         <StyledNav>
             <Link to="/">
-                <img src={Face} alt="logo" />
+                <StyledLogo src={Logo} alt="logo" />
             </Link>
             <NavItems />
         </StyledNav>

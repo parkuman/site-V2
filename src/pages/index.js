@@ -8,6 +8,30 @@ const Home = () => (
         <SEO title="" />
         <h1>Home</h1>
         <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
+        <h1>Home</h1>
+        <p>Welcome home</p>
     </Layout>
 );
 

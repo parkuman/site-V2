@@ -24,7 +24,7 @@ const Light = (props) => {
             style={{ display: "inline", cursor: "pointer" }}
             onClick={handleClick}
         >
-             /💡 •
+            /🌞 •
         </div>
     );
 };
@@ -36,8 +36,15 @@ const DarkToggle = () => {
 
     // Custom function that handles the toggling
     // When called, it replaces the class on document.body and holds it in localStorage
-    const handleTheme = (theme) =>
+    const handleTheme = (theme) => {
+        // this section allows for a smooth transition between light and dark mode, also preventing flickering on page load
+        document.body.classList.add("smooth-transition");
+        setTimeout(
+            () => document.body.classList.remove("smooth-transition"),
+            1000
+        );
         theme === "dark" ? darkMode.enable() : darkMode.disable();
+    };
 
     return (
         <div style={{ display: "inline-block" }}>

@@ -4,7 +4,7 @@ module.exports = {
         "Parker Rowe: A Computer Engineering student from Canada who loves web development, computer vision, long walks down the street, and bringing ideas to life.",
     siteKeywords:
         "Parker Rowe, Parker, Rowe, Queens, Engineering, Computer Engineering, ECEi, Entreprenuership, Innovation",
-    siteUrl: "https://brittanychiang.com",
+    siteUrl: "https://prowe.ca",
     siteLanguage: "en_CA",
     googleAnalyticsID: "",
     googleVerification: "",

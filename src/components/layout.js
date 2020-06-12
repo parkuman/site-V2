@@ -11,6 +11,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Nav from "@components/Nav";
+import Left from "@components/Left";
+import Right from "@components/Right";
+import Footer from "@components/Footer";
+
 import GlobalStyle from "@styles/GlobalStyle";
 
 const StyledSection = styled.section`
@@ -38,15 +42,13 @@ const Layout = ({ children }) => {
         <div id="root">
             <GlobalStyle />
             <Nav />
+            <Left />
+            <Right />
             <Space />
             <StyledSection>
                 <main>{children}</main>
             </StyledSection>
-            <footer>
-                <a href="https://github.com/parkuman/site-V2">
-                    © {new Date().getFullYear()}, Built with ❤ by Parker Rowe
-                </a>
-            </footer>
+            <Footer />
         </div>
     );
 };
