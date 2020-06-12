@@ -4,38 +4,44 @@ import styled from "styled-components";
 import theme from "@styles/theme";
 import config from "../config";
 import GithubIcon from "@components/icons/github";
-import LinkedIn from "@images/social/linkedin.svg";
-import Instagram from "@images/social/instagram.svg";
+import LinkedinIcon from "@components/icons/linkedin";
+import InstagramIcon from "@components/icons/instagram";
 
-const StyledIcon = styled.svg`
+const StyledIcon = styled.a`
+    padding: 10px 0;
+    & svg {
+        transition: ${theme.transition};
+    }
+
     &:hover {
-        fill: var(--accent-color);
+        
+        & svg {
+            fill: var(--accent-color);
+            transform: rotate(10deg) translateY(-3px);
+            
+        }
     }
 `;
 
 const socials = config.socialMedia.map((social) => {
-    // var icon;
+    var icon;
 
-    // switch (social.name) {
-    //     case "GitHub":
-    //         icon = GithubIcon;
-    //         break;
-    //     case "Linkedin":
-    //         icon = LinkedIn;
-    //         break;
-    //     case "Instagram":
-    //         icon = Instagram;
-    //         break;
-    //     default:
-    //         icon = null;
-    //         break;
-    // }
+    switch (social.name) {
+        case "GitHub":
+            icon = <GithubIcon />;
+            break;
+        case "Linkedin":
+            icon = <LinkedinIcon />;
+            break;
+        case "Instagram":
+            icon = <InstagramIcon />;
+            break;
+        default:
+            icon = null;
+            break;
+    }
 
-    return (
-        <a href={social.url}>
-            <GithubIcon />
-        </a>
-    );
+    return <StyledIcon href={social.url}>{icon}</StyledIcon>;
 });
 
 const StyledLeft = styled.div`
@@ -47,12 +53,6 @@ const StyledLeft = styled.div`
     align-items: center;
     bottom: 0;
     left: 0;
-
-    & a {
-        padding: 10px 0;
-        color: ${theme.colors.lightGrey};
-        font-family: ${theme.fonts.IBMPlexMono};
-    }
 `;
 
 const Line = styled.div`

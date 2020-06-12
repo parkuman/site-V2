@@ -70,6 +70,7 @@ const StyledNumber = styled.span`
 
 const StyledLogo = styled.img`
     height: 70px;
+    filter: var(--logo-color);
 `;
 
 const NavItems = () => {

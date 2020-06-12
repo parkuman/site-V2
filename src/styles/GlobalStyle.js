@@ -10,6 +10,7 @@ html {
     width: 100%;
   }
 
+
 *,
 *:before,
 *:after {
@@ -19,6 +20,7 @@ body {
     --bg-color: ${theme.colors.almostWhite};
     --text-color-primary: ${theme.colors.almostBlack};
     --accent-color: ${theme.colors.purple};
+    --logo-color: invert(0%); /* this makes it appear black (like normal) */
 
     display: flex;
     flex-direction: column;
@@ -29,13 +31,12 @@ body {
     background: var(--bg-color);
     color: var(--text-color-primary);
 
-    &.smooth-transition {
-        transition: ${theme.transition};
-    }
     &.dark-mode {
         --bg-color: ${theme.colors.darkGrey};
         --text-color-primary: ${theme.colors.almostWhite};
         --accent-color: ${theme.colors.aquaMarine};
+        --logo-color: invert(100%); /* this makes it appear white for dark mode */
+
     } 
 
     
