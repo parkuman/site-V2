@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Nav from "@components/Nav";
 import Left from "@components/Left";
 import Right from "@components/Right";
+import BG from "@components/BG";
 import Footer from "@components/Footer";
 
 import GlobalStyle from "@styles/GlobalStyle";
@@ -33,10 +34,12 @@ const Layout = ({ children }) => {
             <Left />
             <Right />
             <Space />
+
             <StyledSection>
                 <main>{children}</main>
             </StyledSection>
             <Footer />
+            <BG></BG>
         </div>
     );
 };

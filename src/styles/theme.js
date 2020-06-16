@@ -2,6 +2,9 @@ const theme = {
     colors: {
         almostBlack: "#09090B",
         almostWhite: "#FBFBFB",
+        red: "#FF8585",
+        blue: "#41A5EE",
+        yellow: "#FFE071",
         aquaMarine: "#7cffc4",
         purple: "#463AB8",
         candyPink: "#EF767A",

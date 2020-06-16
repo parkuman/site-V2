@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import TextLoop from "react-text-loop";
 
 import theme from "@styles/theme";
 
 const StyledHero = styled.section`
     padding: 100px 50px;
+    height: 100vh;
 `;
 
 const StyledGreeting = styled.p`
@@ -12,6 +14,7 @@ const StyledGreeting = styled.p`
     color: var(--accent-color);
     margin: 0;
     padding: 0;
+    padding-top: 15vh;
     font-size: 1.2rem;
 `;
 
@@ -41,29 +44,15 @@ const StyledInfo = styled.div`
     font-size: 1.1rem;
 `;
 
-const StyledTool = styled.span`
-    margin-left: 20px;
-    display: inline-block;
-    transition: 3s;
+const ScrollText = styled.span`
+    margin-left: 2rem;
+    position: relative;
+    /* to scooch it up a bit */
+    top: -0.5rem;
 `;
-
-const Tool = ({ children }) => {
-    return <StyledTool style>{children}</StyledTool>;
-};
 
 const Hero = ({ data }) => {
     const { frontmatter, html } = data[0].node;
-    const [tool, setTool] = useState(0);
-
-    // Similar to componentDidMount and componentDidUpdate:
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTool((tool) => (tool + 1) % frontmatter.tools.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {});
 
     return (
         <StyledHero>
@@ -71,7 +60,12 @@ const Hero = ({ data }) => {
             <StyledName>{frontmatter.name}</StyledName>
             <StyledSubtitle>
                 {frontmatter.subtitle}
-                <Tool>{frontmatter.tools[tool]}</Tool>
+
+                <TextLoop>
+                    {frontmatter.tools.map((tool) => (
+                        <ScrollText>{tool}</ScrollText>
+                    ))}
+                </TextLoop>
             </StyledSubtitle>
             <StyledInfo dangerouslySetInnerHTML={{ __html: html }}></StyledInfo>
         </StyledHero>
