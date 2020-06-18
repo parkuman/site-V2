@@ -1,10 +1,12 @@
 ---
 title: "About Me"
-pic: "./pic.png"
+profilePic: ./pic.png
 skills:
-    - Lots
-    - of
-    - not much
+    - These
+    - are
+    - my
+    - skills
+    - man
 ---
 
 I’m Parker, an engineer and software developer in my 3rd year of Computer Engineering specialized in Entreprenuership & Innovation @ Queen’s University.

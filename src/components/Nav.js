@@ -18,6 +18,7 @@ const StyledNav = styled.nav`
     width: 100%;
     padding: 10px 40px;
     height: 70px;
+    z-index: 100000000;
     background: var(--bg-color);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     font-family: ${theme.fonts.IBMPlexMono};
@@ -29,7 +30,7 @@ const StyledNavItems = styled.ul`
         display: inline;
         padding: 0 10px;
         &:last-of-type {
-            margin-right: 10px
+            margin-right: 10px;
         }
         /* &:nth-of-type(1):hover ~ .underbar {
             left: 75px;

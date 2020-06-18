@@ -98,7 +98,13 @@ export const pageQuery = graphql`
                 node {
                     frontmatter {
                         title
-
+                        profilePic {
+                            childImageSharp {
+                                fluid(maxWidth: 800) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
                         skills
                     }
                     html
