@@ -16,6 +16,13 @@ const StyledHeader = styled.h1`
     padding: 0;
     font-weight: 500;
     font-style: normal;
+
+    &:before {
+        content: "01. ";
+        font-family: ${theme.fonts.IBMPlexMono};
+        font-size: 1.5rem;
+        color: var(--accent-color);
+    }
 `;
 
 const StyledContent = styled.div`
@@ -28,6 +35,13 @@ const StyledInfo = styled.div`
     margin-top: 40px;
     width: 60%;
     font-size: 1.1rem;
+
+    & a {
+        color: var(--accent-color);
+        &:hover {
+            color: var(--text-color-primary);
+        }
+    }
 `;
 
 const StyledProfilePic = styled(Img)`
@@ -49,6 +63,7 @@ const StyledSkills = styled.ul`
 
         &:before {
             content: "→ ";
+            color: var(--accent-color);
         }
     }
 `;
