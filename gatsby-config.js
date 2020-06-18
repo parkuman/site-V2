@@ -31,9 +31,9 @@ module.exports = {
                 path: `${__dirname}/content/`,
             },
         },
+        `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-remark`,
-        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {

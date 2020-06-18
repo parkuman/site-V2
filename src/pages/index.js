@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql } from "gatsby";
 
 import Layout from "@components/Layout";
 import SEO from "@components/SEO";
@@ -97,7 +98,7 @@ export const pageQuery = graphql`
                 node {
                     frontmatter {
                         title
-                        pic
+
                         skills
                     }
                     html

@@ -6,12 +6,14 @@ const Dark = (props) => {
     const handleClick = () => props.onClick && props.onClick("dark");
 
     return (
-        <div
+        <button
             style={{ display: "inline", cursor: "pointer" }}
             onClick={handleClick}
         >
-            🌚
-        </div>
+            <span role="img" aria-label="dark mode">
+                🌚
+            </span>
+        </button>
     );
 };
 
@@ -20,12 +22,14 @@ const Light = (props) => {
     const handleClick = () => props.onClick && props.onClick("light");
 
     return (
-        <div
+        <button
             style={{ display: "inline", cursor: "pointer" }}
             onClick={handleClick}
         >
-            /🌞 •
-        </div>
+            <span role="img" aria-label="light mode">
+                🌞
+            </span>
+        </button>
     );
 };
 
