@@ -1,12 +1,12 @@
 ---
-title: "Custom Robot Detection AI"
-date: "2019-09-01"
+title: "AlarMe, not your average alarm clock."
+date: "2020-05-01"
 technologies: 
-    - Python
-    - Tensorflow
-    - OpenCV
-    - Keras
-headerPic: 
+    - Flutter
+    - Dart
+    - Arduino
+    - NFC
+headerPic: ./sc.png
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 

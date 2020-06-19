@@ -1,14 +1,10 @@
 ---
-title: "Personal Site v2"
-date: "2020-06-30"
+title: "Personal Site v1"
+date: "2020-05-01"
 technologies: 
-    - React
-    - Gatsby
-    - ES6
-    - Javascript
-    - SCSS
     - HTML
-headerPic: 
+    - CSS
+headerPic: ./sc.png
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 

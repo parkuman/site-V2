@@ -1,12 +1,12 @@
 ---
-title: "REACH, a social event app."
-date: "2019-04-01"
+title: "Custom Robot Detection AI"
+date: "2019-09-01"
 technologies: 
-    - Flutter
-    - Firebase
-    - Dart
-    - Google Maps API
-headerPic: 
+    - Python
+    - Tensorflow
+    - OpenCV
+    - Keras
+headerPic: ./sc.jpg
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 

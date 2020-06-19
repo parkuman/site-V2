@@ -1,10 +1,12 @@
 ---
-title: "Personal Site v1"
-date: "2020-05-01"
+title: "REACH, a social event app."
+date: "2019-04-01"
 technologies: 
-    - HTML
-    - CSS
-headerPic: 
+    - Flutter
+    - Firebase
+    - Dart
+    - Google Maps API
+headerPic: ./sc.jpg
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 

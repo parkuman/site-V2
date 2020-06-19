@@ -47,7 +47,7 @@ const StyledInfo = styled.div`
 const StyledProfilePic = styled(Img)`
     position: relative;
     width: 40%;
-    max-width: 400px;
+    /* max-width: 400px; */
     margin-left: 60px;
 `;
 
@@ -70,7 +70,7 @@ const StyledSkills = styled.ul`
 
 const About = ({ data }) => {
     const { frontmatter, html } = data[0].node;
-    let profilePicFluid = frontmatter.profilePic.childImageSharp.fluid;
+    const profilePicFluid = frontmatter.profilePic.childImageSharp.fluid;
 
     return (
         <StyledAbout>

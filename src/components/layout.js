@@ -18,7 +18,7 @@ import GlobalStyle from "@styles/GlobalStyle";
 
 const StyledSection = styled.section`
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 80%;
 `;
 
 const Space = styled.div`

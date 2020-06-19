@@ -4,7 +4,7 @@ date: "2018-01-01"
 technologies: 
     - Java
     - Google Sheets API
-headerPic: 
+headerPic: ./sc.png
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 
