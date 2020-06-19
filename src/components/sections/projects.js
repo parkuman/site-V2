@@ -44,7 +44,7 @@ const Project = ({ node }) => {
 
 const Projects = ({ data }) => {
     return (
-        <StyledProjects>
+        <StyledProjects id="projects">
             <StyledHeader>Projects</StyledHeader>
             <StyledList>
                 {data.map((data, i) => (

@@ -62,8 +62,8 @@ const Hero = ({ data }) => {
                 {frontmatter.subtitle}
 
                 <TextLoop>
-                    {frontmatter.tools.map((tool) => (
-                        <ScrollText>{tool}</ScrollText>
+                    {frontmatter.tools.map((tool, i) => (
+                        <ScrollText key={i}>{tool}</ScrollText>
                     ))}
                 </TextLoop>
             </StyledSubtitle>

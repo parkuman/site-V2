@@ -23,7 +23,7 @@ const StyledIcon = styled.a`
     }
 `;
 
-const socials = config.socialMedia.map((social) => {
+const socials = config.socialMedia.map((social, i) => {
     var icon;
 
     switch (social.name) {
@@ -41,7 +41,7 @@ const socials = config.socialMedia.map((social) => {
             break;
     }
 
-    return <StyledIcon href={social.url}>{icon}</StyledIcon>;
+    return <StyledIcon href={social.url} key={i}>{icon}</StyledIcon>;
 });
 
 const StyledLeft = styled.div`

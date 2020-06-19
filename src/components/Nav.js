@@ -78,9 +78,9 @@ const NavItems = () => {
     return (
         <StyledNavItems>
             <DarkToggle />
-            {config.navLinks.map((item, key) => (
-                <li>
-                    <StyledNumber>0{key + 1}. </StyledNumber>
+            {config.navLinks.map((item, i) => (
+                <li key={i}>
+                    <StyledNumber>0{i + 1}. </StyledNumber>
                     <Link to={item.url}>{item.name}</Link>
                 </li>
             ))}

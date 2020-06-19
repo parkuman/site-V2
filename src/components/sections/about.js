@@ -83,8 +83,8 @@ const About = ({ data }) => {
                 <StyledProfilePic fluid={profilePicFluid} />
             </StyledContent>
             <StyledSkills>
-                {frontmatter.skills.map((skill) => (
-                    <li>{skill}</li>
+                {frontmatter.skills.map((skill, i) => (
+                    <li key={i}>{skill}</li>
                 ))}
             </StyledSkills>
         </StyledAbout>
