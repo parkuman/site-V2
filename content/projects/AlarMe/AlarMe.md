@@ -6,7 +6,7 @@ technologies:
     - Dart
     - Arduino
     - NFC
-headerPic: ./sc.png
+headerPic: ./sc.jpg
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 ---
 

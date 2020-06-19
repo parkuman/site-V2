@@ -52,12 +52,11 @@ const StyledProject = styled.div`
 
 const StyledImage = styled(Img)`
     position: relative;
-    width: 45%;
-    max-width: 400px;
-    max-height: 400px;
+    min-width: 40%;
+    max-height: 60vh;
+    
     border-radius: 15px;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-
 `;
 
 const StyledProjectContent = styled.div`
@@ -66,7 +65,7 @@ const StyledProjectContent = styled.div`
 
     & h2 {
         font-size: 3rem;
-        margin: 0;
+        margin-bottom: 1.5rem;
         font-weight: normal;
         color: var(--text-color-primary);
         font-family: ${theme.fonts.IBMPlexMono};
@@ -74,7 +73,7 @@ const StyledProjectContent = styled.div`
 
     & p {
         font-size: 1.1rem;
-        
+
         font-weight: normal;
         color: var(--text-color-secondary);
     }
@@ -100,10 +99,7 @@ const StyledProjectTechnologies = styled.ul`
     }
 `;
 
-const StyledProjectDescription = styled.div`
-    color: var(--text-color-secondary);
-    font-size: 1.1rem;
-`;
+
 
 const Project = ({ node }) => {
     const { frontmatter, html } = node;
@@ -120,9 +116,7 @@ const Project = ({ node }) => {
                             <li key={i}>{technology}</li>
                         ))}
                     </StyledProjectTechnologies>
-                    <StyledProjectDescription
-                        dangerouslySetInnerHTML={{ __html: html }}
-                    ></StyledProjectDescription>
+                    <p>{frontmatter.description}</p>
                     <p>{frontmatter.date}</p>
                 </StyledProjectContent>
             </StyledProject>
