@@ -5,7 +5,6 @@ import theme from "@styles/theme";
 
 const StyledProjects = styled.section`
     padding: 100px 50px;
-    height: 100vh;
 `;
 
 const StyledHeader = styled.h1`
@@ -25,15 +24,35 @@ const StyledHeader = styled.h1`
     }
 `;
 
-const Projects = () => {
-    return(
-        <StyledProjects>
-            <StyledHeader>Projects</StyledHeader>
-        </StyledProjects>
-    );
+const StyledList = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 
+    & li {
+        padding: 10px 0;
+    }
+`;
+
+const Project = ({ node }) => {
+    const { frontmatter } = node;
+
+    return <h1>{frontmatter.title}</h1>;
 };
 
-
+const Projects = ({ data }) => {
+    return (
+        <StyledProjects>
+            <StyledHeader>Projects</StyledHeader>
+            <StyledList>
+                {data.map((data, i) => (
+                    <Project node={data.node} key={i} />
+                ))}
+            </StyledList>
+        </StyledProjects>
+    );
+};
 
 export default Projects;

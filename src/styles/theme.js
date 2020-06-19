@@ -9,7 +9,7 @@ const theme = {
         purple: "#463AB8",
         candyPink: "#EF767A",
         darkGrey: "#212121",
-        lightGrey: "#676767",
+        lightGrey: "#868686",
         lighterGrey: "#DAEAEA",
     },
 

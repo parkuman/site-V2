@@ -40,7 +40,7 @@ body {
         --text-color-primary: ${theme.colors.almostWhite};
         --accent-color: ${theme.colors.aquaMarine};
         --logo-color: invert(100%); /* this makes it appear white for dark mode */
-        --text-color-secondary: ${theme.colors.lighterGrey};
+        --text-color-secondary: ${theme.colors.lightGrey};
 
     } 
 
