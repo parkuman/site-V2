@@ -59,7 +59,7 @@ const Line = styled.div`
     height: 100px;
     width: 2px;
     margin-top: 20px;
-    background: ${theme.colors.lightGrey};
+    background: var(--text-color-secondary);
 `;
 
 const Left = () => {

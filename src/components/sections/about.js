@@ -6,7 +6,7 @@ import theme from "@styles/theme";
 
 const StyledAbout = styled.section`
     padding: 100px 50px;
-    height: 100vh;
+    height: 80vh;
 `;
 
 const StyledHeader = styled.h1`
@@ -31,7 +31,7 @@ const StyledContent = styled.div`
 `;
 
 const StyledInfo = styled.div`
-    color: ${theme.colors.lightGrey};
+    color: var(--text-color-secondary);
     margin-top: 40px;
     width: 60%;
     font-size: 1.1rem;
@@ -56,7 +56,7 @@ const StyledSkills = styled.ul`
     list-style-type: none;
     margin: 0;
     padding: 0;
-    color: ${theme.colors.lightGrey};
+    color: var(--text-color-secondary);
     & li {
         display: inline-block;
         padding: 0 20px;
@@ -74,7 +74,7 @@ const About = ({ data }) => {
 
     return (
         <StyledAbout>
-            <StyledHeader>{frontmatter.title}</StyledHeader>
+            <StyledHeader id="about">{frontmatter.title}</StyledHeader>
             <StyledContent>
                 <StyledInfo
                     dangerouslySetInnerHTML={{ __html: html }}

@@ -28,7 +28,7 @@ const StyledName = styled.h1`
 `;
 
 const StyledSubtitle = styled.h2`
-    color: ${theme.colors.lightGrey};
+    color: var(--text-color-secondary);
     font-size: 4rem;
     margin: 0;
     padding: 0;
@@ -38,7 +38,7 @@ const StyledSubtitle = styled.h2`
 `;
 
 const StyledInfo = styled.div`
-    color: ${theme.colors.lightGrey};
+    color: var(--text-color-secondary);
     margin-top: 40px;
     width: 70%;
     font-size: 1.1rem;

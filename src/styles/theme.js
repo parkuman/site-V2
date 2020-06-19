@@ -10,6 +10,7 @@ const theme = {
         candyPink: "#EF767A",
         darkGrey: "#212121",
         lightGrey: "#676767",
+        lighterGrey: "#DAEAEA",
     },
 
     fonts: {

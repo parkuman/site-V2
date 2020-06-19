@@ -19,6 +19,7 @@ html {
 body {
     --bg-color: ${theme.colors.almostWhite};
     --text-color-primary: ${theme.colors.almostBlack};
+    --text-color-secondary: ${theme.colors.lightGrey};
     --accent-color: ${theme.colors.purple};
     --logo-color: invert(0%); /* this makes it appear black (like normal) */
 
@@ -39,6 +40,7 @@ body {
         --text-color-primary: ${theme.colors.almostWhite};
         --accent-color: ${theme.colors.aquaMarine};
         --logo-color: invert(100%); /* this makes it appear white for dark mode */
+        --text-color-secondary: ${theme.colors.lighterGrey};
 
     } 
 

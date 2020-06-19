@@ -18,7 +18,7 @@ const StyledRight = styled.div`
     & a {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        color: ${theme.colors.lightGrey};
+        color: var(--text-color-secondary);
         font-family: ${theme.fonts.IBMPlexMono};
     }
 `;
@@ -27,7 +27,7 @@ const Line = styled.div`
     height: 100px;
     width: 2px;
     margin-top: 20px;
-    background: ${theme.colors.lightGrey};
+    background: var(--text-color-secondary);
 `;
 
 const Right = () => {

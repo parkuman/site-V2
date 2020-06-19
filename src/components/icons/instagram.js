@@ -1,7 +1,13 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledSvg = styled.svg`
+    fill: var(--text-color-secondary);
+`;
+
 
 const InstagramIcon = () => (
-    <svg
+    <StyledSvg
         width="20"
         height="20"
         viewBox="0 0 20 20"
@@ -20,7 +26,7 @@ const InstagramIcon = () => (
             d="M15.1797 6.73557C15.8161 6.73557 16.332 6.21964 16.332 5.58322C16.332 4.9468 15.8161 4.43088 15.1797 4.43088C14.5433 4.43088 14.0273 4.9468 14.0273 5.58322C14.0273 6.21964 14.5433 6.73557 15.1797 6.73557Z"
             
         />
-    </svg>
+    </StyledSvg>
 );
 
 export default InstagramIcon;

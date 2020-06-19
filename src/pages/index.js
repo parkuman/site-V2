@@ -7,6 +7,7 @@ import SEO from "@components/SEO";
 
 import Hero from "@components/sections/hero";
 import About from "@components/sections/about";
+import Projects from "@components/sections/projects";
 
 const StyledHeader = styled.h1`
     color: var(--text-color-primary);
@@ -17,6 +18,7 @@ const Home = ({ data }) => (
         <SEO title="" />
         <Hero data={data.hero.edges} />
         <About data={data.about.edges} />
+        <Projects />
         <StyledHeader>Home</StyledHeader>
         <StyledHeader>Home</StyledHeader>
         <StyledHeader>Home</StyledHeader>
