@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import theme from "@styles/theme";
-import { OutlineButton } from "@components/buttons";
+import { OutlineButton } from "@components/Buttons";
 import config from "../../config";
 
 const StyledContact = styled.section`

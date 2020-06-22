@@ -1,0 +1,13 @@
+---
+title: "Assistant Team Captain"
+company: "Queen's Robomaster Design Team"
+startDate: "May 2020"
+endDate: 
+order: 10
+---
+
+DaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowja
+
+awiodjawDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowja
+
+DaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowjaDaoidjawoidjwaidowja

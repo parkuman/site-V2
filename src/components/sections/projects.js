@@ -8,7 +8,7 @@ import GithubIcon from "@components/icons/github";
 import YoutubeIcon from "@components/icons/youtube";
 
 const StyledProjects = styled.section`
-    padding: 100px 50px;
+    padding: 100px 0;
 `;
 
 const StyledHeader = styled.h1`
@@ -38,14 +38,6 @@ const StyledList = styled.ul`
     & li {
         padding: 80px 0;
     }
-
-    &:nth-child(odd) {
-        text-align: center;
-    }
-
-    &:nth-child(even) {
-        text-align: left;
-    }
 `;
 
 const StyledProject = styled.div`
@@ -65,7 +57,6 @@ const StyledProjectContent = styled.div`
     width: 80%;
 
     margin: 0 80px;
-    
 
     & h2 {
         font-size: 3rem;
@@ -129,7 +120,6 @@ const StyledIcon = styled.a`
 const Project = ({ node, index }) => {
     const { frontmatter } = node;
     const headerPicFluid = frontmatter.headerPic.childImageSharp.fluid;
-    console.log("wiojdaodijwadojwa", index);
     return (
         <li>
             <StyledProject>

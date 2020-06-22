@@ -7,6 +7,7 @@ import SEO from "@components/SEO";
 import Hero from "@components/sections/hero";
 import About from "@components/sections/about";
 import Projects from "@components/sections/projects";
+import Experience from "@components/sections/experience";
 import Contact from "@components/sections/contact";
 
 const Home = ({ data }) => (
@@ -15,6 +16,7 @@ const Home = ({ data }) => (
         <Hero data={data.hero.edges} />
         <About data={data.about.edges} />
         <Projects data={data.projects.edges} />
+        <Experience data={data.experience.edges} />
         <Contact data={data.contact.edges} />
     </Layout>
 );
@@ -60,7 +62,7 @@ export const pageQuery = graphql`
             }
         }
         projects: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/projects/" } }
+            filter: { fileAbsolutePath: { regex: "/projects/" } }, sort: {order: ASC, fields: frontmatter___order}
         ) {
             edges {
                 node {
@@ -82,6 +84,20 @@ export const pageQuery = graphql`
                 }
             }
         }
+        experience: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/experience/"}}, sort: {order: ASC, fields: frontmatter___order}) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  company
+                  startDate
+                  endDate
+                  order
+                }
+                html
+              }
+            }
+          }
         contact: allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/contact/" } }
         ) {
