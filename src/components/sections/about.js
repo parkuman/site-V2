@@ -56,6 +56,7 @@ const StyledSkills = styled.ul`
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-top: 40px;
     color: var(--text-color-secondary);
     & li {
         display: inline-block;
@@ -76,17 +77,17 @@ const About = ({ data }) => {
         <StyledAbout>
             <StyledHeader id="about">{frontmatter.title}</StyledHeader>
             <StyledContent>
-                <StyledInfo
-                    dangerouslySetInnerHTML={{ __html: html }}
-                ></StyledInfo>
+                <StyledInfo>
+                    <div dangerouslySetInnerHTML={{ __html: html }}></div>
+                    <StyledSkills>
+                        {frontmatter.skills.map((skill, i) => (
+                            <li key={i}>{skill}</li>
+                        ))}
+                    </StyledSkills>
+                </StyledInfo>
 
                 <StyledProfilePic fluid={profilePicFluid} />
             </StyledContent>
-            <StyledSkills>
-                {frontmatter.skills.map((skill, i) => (
-                    <li key={i}>{skill}</li>
-                ))}
-            </StyledSkills>
         </StyledAbout>
     );
 };

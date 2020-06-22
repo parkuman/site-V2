@@ -3,6 +3,10 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import theme from "@styles/theme";
 
+import EarthIcon from "@components/icons/earth";
+import GithubIcon from "@components/icons/github";
+import YoutubeIcon from "@components/icons/youtube";
+
 const StyledProjects = styled.section`
     padding: 100px 50px;
 `;
@@ -52,9 +56,7 @@ const StyledProject = styled.div`
 
 const StyledImage = styled(Img)`
     position: relative;
-    min-width: 40%;
-    max-height: 60vh;
-    
+    width: 40%;
     border-radius: 15px;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 `;
@@ -79,6 +81,21 @@ const StyledProjectContent = styled.div`
     }
 `;
 
+const StyledProjectFooter = styled.div`
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+`;
+
+const StyledProjectLinks = styled.ul`
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    & li {
+        display: inline;
+    }
+`;
+
 const StyledProjectTechnologies = styled.ul`
     list-style: none;
     display: flex;
@@ -99,10 +116,22 @@ const StyledProjectTechnologies = styled.ul`
     }
 `;
 
+const StyledIcon = styled.a`
+    padding: 0 10px;
+    & svg {
+        transition: ${theme.transition};
+    }
 
+    &:hover {
+        & svg {
+            fill: var(--accent-color);
+            transform: translateY(-3px);
+        }
+    }
+`;
 
 const Project = ({ node }) => {
-    const { frontmatter, html } = node;
+    const { frontmatter } = node;
     const headerPicFluid = frontmatter.headerPic.childImageSharp.fluid;
 
     return (
@@ -110,6 +139,21 @@ const Project = ({ node }) => {
             <StyledProject>
                 <StyledImage fluid={headerPicFluid} />
                 <StyledProjectContent>
+                    <StyledProjectLinks>
+                        {frontmatter.links.map((link, i) => {
+                            var icon = <EarthIcon size="40px" />;
+                            if (link.includes("github"))
+                                icon = <GithubIcon size="35px" />;
+                            else if (link.includes("yout"))
+                                icon = <YoutubeIcon size="40px" />;
+
+                            return (
+                                <li key={i}>
+                                    <StyledIcon href={link}>{icon}</StyledIcon>
+                                </li>
+                            );
+                        })}
+                    </StyledProjectLinks>
                     <h2>{frontmatter.title}</h2>
                     <StyledProjectTechnologies>
                         {frontmatter.technologies.map((technology, i) => (
@@ -117,7 +161,9 @@ const Project = ({ node }) => {
                         ))}
                     </StyledProjectTechnologies>
                     <p>{frontmatter.description}</p>
-                    <p>{frontmatter.date}</p>
+                    <StyledProjectFooter>
+                        <p>{frontmatter.date}</p>
+                    </StyledProjectFooter>
                 </StyledProjectContent>
             </StyledProject>
         </li>

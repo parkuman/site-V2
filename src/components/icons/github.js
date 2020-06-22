@@ -5,11 +5,10 @@ const StyledSvg = styled.svg`
     fill: var(--text-color-secondary);
 `;
 
-
-const GithubIcon = () => (
+const GithubIcon = ({ size }) => (
     <StyledSvg
-        width="20"
-        height="20"
+        width={size ? size : "24px"}
+        height={size ? size : "24px"}
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
         fill="#676767"
