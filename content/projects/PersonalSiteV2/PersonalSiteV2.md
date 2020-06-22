@@ -1,6 +1,6 @@
 ---
 title: "Personal Site v2"
-date: "2020-06-30"
+date: "June 2020"
 technologies: 
     - React
     - Gatsby

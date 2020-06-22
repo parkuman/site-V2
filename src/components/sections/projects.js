@@ -63,7 +63,9 @@ const StyledImage = styled(Img)`
 
 const StyledProjectContent = styled.div`
     width: 80%;
-    margin-left: 80px;
+
+    margin: 0 80px;
+    
 
     & h2 {
         font-size: 3rem;
@@ -79,12 +81,6 @@ const StyledProjectContent = styled.div`
         font-weight: normal;
         color: var(--text-color-secondary);
     }
-`;
-
-const StyledProjectFooter = styled.div`
-    /* width: 100%; */
-    display: flex;
-    justify-content: space-between;
 `;
 
 const StyledProjectLinks = styled.ul`
@@ -130,14 +126,16 @@ const StyledIcon = styled.a`
     }
 `;
 
-const Project = ({ node }) => {
+const Project = ({ node, index }) => {
     const { frontmatter } = node;
     const headerPicFluid = frontmatter.headerPic.childImageSharp.fluid;
-
+    console.log("wiojdaodijwadojwa", index);
     return (
         <li>
             <StyledProject>
-                <StyledImage fluid={headerPicFluid} />
+                {index % 2 === 0 ? (
+                    <StyledImage fluid={headerPicFluid} />
+                ) : null}
                 <StyledProjectContent>
                     <StyledProjectLinks>
                         {frontmatter.links.map((link, i) => {
@@ -161,10 +159,11 @@ const Project = ({ node }) => {
                         ))}
                     </StyledProjectTechnologies>
                     <p>{frontmatter.description}</p>
-                    <StyledProjectFooter>
-                        <p>{frontmatter.date}</p>
-                    </StyledProjectFooter>
+                    <p>{frontmatter.date}</p>
                 </StyledProjectContent>
+                {index % 2 === 0 ? null : (
+                    <StyledImage fluid={headerPicFluid} />
+                )}
             </StyledProject>
         </li>
     );
@@ -176,7 +175,7 @@ const Projects = ({ data }) => {
             <StyledHeader>Projects</StyledHeader>
             <StyledList>
                 {data.map((data, i) => (
-                    <Project node={data.node} key={i} />
+                    <Project node={data.node} key={i} index={i} />
                 ))}
             </StyledList>
         </StyledProjects>

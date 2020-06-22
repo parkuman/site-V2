@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import config from "../config";
-import theme from "@styles/theme"
+import theme from "@styles/theme";
 
 const StyledFooter = styled.footer`
     font-family: ${theme.fonts.IBMPlexMono};
@@ -10,6 +10,13 @@ const StyledFooter = styled.footer`
     text-shadow: none;
     background-image: none;
     margin-bottom: 30px;
+    & a {
+        color: var(--text-color-secondary);
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
 `;
 
 const Footer = () => (

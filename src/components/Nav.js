@@ -52,7 +52,6 @@ const StyledNavItems = styled.ul`
             width: 65px;
             background: #41a5ee;
         } */
-        cursor: pointer;
     }
 
     /* & .underbar {
@@ -84,7 +83,7 @@ const NavItems = () => {
                     <Link to={item.url}>{item.name}</Link>
                 </li>
             ))}
-            <OutlineButton text="Resume" href="resume.pdf"></OutlineButton>
+            <OutlineButton href="resume.pdf">Resume</OutlineButton>
             <div className="underbar"></div>
         </StyledNavItems>
     );

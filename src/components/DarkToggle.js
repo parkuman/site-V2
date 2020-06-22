@@ -1,19 +1,23 @@
 import React from "react";
 import useDarkMode from "use-dark-mode";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+    display: inline;
+    cursor: pointer;
+    outline: none;
+`;
 
 const Dark = (props) => {
-    // If the `onClick` prop exists, call it with 'dark'
+    /* // If the `onClick` prop exists, call it with 'dark' */
     const handleClick = () => props.onClick && props.onClick("dark");
 
     return (
-        <button
-            style={{ display: "inline", cursor: "pointer" }}
-            onClick={handleClick}
-        >
+        <StyledButton onClick={handleClick} label>
             <span role="img" aria-label="dark mode">
                 🌚
             </span>
-        </button>
+        </StyledButton>
     );
 };
 
@@ -22,14 +26,11 @@ const Light = (props) => {
     const handleClick = () => props.onClick && props.onClick("light");
 
     return (
-        <button
-            style={{ display: "inline", cursor: "pointer" }}
-            onClick={handleClick}
-        >
+        <StyledButton onClick={handleClick}>
             <span role="img" aria-label="light mode">
                 🌞
             </span>
-        </button>
+        </StyledButton>
     );
 };
 

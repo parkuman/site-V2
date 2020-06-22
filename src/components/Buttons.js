@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const OutlineButton = ({ text, href }) => {
+export const OutlineButton = ({ children, href }) => {
     const StyledButton = styled.button`
         border: 1px solid;
         box-sizing: border-box;
@@ -14,7 +14,7 @@ export const OutlineButton = ({ text, href }) => {
 
     return (
         <a href={href}>
-            <StyledButton>{text}</StyledButton>
+            <StyledButton>{children}</StyledButton>
         </a>
     );
 };

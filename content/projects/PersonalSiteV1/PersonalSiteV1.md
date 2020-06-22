@@ -1,6 +1,6 @@
 ---
 title: "Personal Site v1"
-date: "2020-05-01"
+date: "May 2020"
 technologies: 
     - HTML
     - CSS

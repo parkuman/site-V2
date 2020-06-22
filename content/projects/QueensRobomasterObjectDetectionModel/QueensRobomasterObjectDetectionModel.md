@@ -1,6 +1,6 @@
 ---
 title: "Custom Robot Detection AI"
-date: "2019-09-01"
+date: "December 2019"
 technologies: 
     - Python
     - Tensorflow

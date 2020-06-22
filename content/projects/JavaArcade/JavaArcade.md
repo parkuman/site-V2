@@ -1,6 +1,6 @@
 ---
 title: "Mahcrosoft Arcade, a retro arcade made in Java."
-date: "2018-01-01"
+date: "January 2018"
 technologies: 
     - Java
     - Google Sheets API

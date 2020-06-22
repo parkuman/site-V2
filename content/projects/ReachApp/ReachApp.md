@@ -1,6 +1,6 @@
 ---
 title: "REACH, a social event app."
-date: "2019-04-01"
+date: "March 2019"
 technologies: 
     - Flutter
     - Firebase

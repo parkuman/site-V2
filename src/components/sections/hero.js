@@ -3,6 +3,8 @@ import styled from "styled-components";
 import TextLoop from "react-text-loop";
 
 import theme from "@styles/theme";
+import { OutlineButton } from "@components/Buttons";
+import config from "../../config";
 
 const StyledHero = styled.section`
     padding: 100px 50px;
@@ -68,6 +70,7 @@ const Hero = ({ data }) => {
                 </TextLoop>
             </StyledSubtitle>
             <StyledInfo dangerouslySetInnerHTML={{ __html: html }}></StyledInfo>
+            <OutlineButton href={"mailto:" + config.email}>Contact</OutlineButton>
         </StyledHero>
     );
 };

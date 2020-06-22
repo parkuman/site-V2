@@ -45,9 +45,9 @@ const StyledInfo = styled.div`
 `;
 
 const StyledProfilePic = styled(Img)`
-    position: relative;
+    /* position: relative; */
     width: 40%;
-    /* max-width: 400px; */
+    max-width: 40vw;
     margin-left: 60px;
 `;
 

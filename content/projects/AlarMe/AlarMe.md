@@ -1,6 +1,6 @@
 ---
 title: "AlarMe, not your average alarm clock."
-date: "2020-05-01"
+date: "May 2020"
 technologies: 
     - Flutter
     - Dart
