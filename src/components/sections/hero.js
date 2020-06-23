@@ -66,7 +66,8 @@ const StyledSubtitle = styled.h2`
     }
 
     ${media.tablet`
-        font-size: 3rem;
+        font-size: 2rem;
+        line-height: 3.2rem;
     `}
 `;
 
@@ -80,6 +81,7 @@ const StyledInfo = styled.div`
         width: 90%;
     `}
     ${media.phone`
+    margin-top: 10px;
         font-size: 1rem;
     `}
 `;
