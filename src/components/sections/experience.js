@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import media from "@styles/media";
 import theme from "@styles/theme";
 
 const StyledExperience = styled.section`
@@ -21,7 +22,18 @@ const StyledHeader = styled.h1`
         font-family: ${theme.fonts.IBMPlexMono};
         font-size: 1.5rem;
         color: var(--accent-color);
+
+        ${media.phone`
+            font-size: 1rem;
+        `}
     }
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
+    ${media.phone`
+        text-align: center;
+    `}
 `;
 
 const StyledList = styled.ul`
@@ -37,10 +49,18 @@ const StyledList = styled.ul`
     & li {
         padding: 0 60px;
 
+        ${media.tablet`
+            padding: 0;
+        `}
+
         & hr {
             margin: 70px 0;
         }
     }
+
+    ${media.phone`
+        list-style: none;
+    `}
 `;
 
 const StyledJob = styled.div`
@@ -52,6 +72,10 @@ const StyledJob = styled.div`
         color: var(--text-color-primary);
         font-family: ${theme.fonts.IBMPlexSans};
         font-weight: normal;
+
+        ${media.phone`
+            font-size: 1.7rem;
+        `}
     }
 
     & h3 {
@@ -60,6 +84,10 @@ const StyledJob = styled.div`
         font-weight: normal;
         color: var(--accent-color);
         font-family: ${theme.fonts.IBMPlexMono};
+
+        ${media.phone`
+            font-size: 1.3rem;
+        `}
     }
 
     & h4 {
@@ -68,6 +96,10 @@ const StyledJob = styled.div`
         font-weight: normal;
         color: var(--text-color-secondary);
         font-family: ${theme.fonts.IBMPlexMono};
+
+        ${media.phone`
+            font-size: 1.1rem;
+        `}
     }
 
     & p {
@@ -84,6 +116,10 @@ const StyledJob = styled.div`
                 color: var(--text-color-primary);
             }
         }
+
+        ${media.phone`
+            font-size: 1rem;
+        `}
     }
 `;
 

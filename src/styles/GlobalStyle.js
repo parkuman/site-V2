@@ -7,8 +7,6 @@ ${FontFaces};
 
 html {
     box-sizing: border-box;
-    width: 100%;
-
   }
 
 

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import theme from "@styles/theme";
+import media from "@styles/media";
 import config from "../config";
 import GithubIcon from "@components/icons/github";
 import LinkedinIcon from "@components/icons/linkedin";
@@ -14,11 +15,9 @@ const StyledIcon = styled.a`
     }
 
     &:hover {
-        
         & svg {
             fill: var(--accent-color);
             transform: rotate(10deg) translateY(-3px);
-            
         }
     }
 `;
@@ -41,7 +40,11 @@ const socials = config.socialMedia.map((social, i) => {
             break;
     }
 
-    return <StyledIcon href={social.url} key={i}>{icon}</StyledIcon>;
+    return (
+        <StyledIcon href={social.url} key={i}>
+            {icon}
+        </StyledIcon>
+    );
 });
 
 const StyledLeft = styled.div`
@@ -53,6 +56,9 @@ const StyledLeft = styled.div`
     align-items: center;
     bottom: 0;
     left: 0;
+    ${media.tablet`
+        display: none;
+    `}
 `;
 
 const Line = styled.div`

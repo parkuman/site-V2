@@ -15,15 +15,15 @@ import BG from "@components/BG";
 import Footer from "@components/Footer";
 
 import GlobalStyle from "@styles/GlobalStyle";
+import media from "@styles/media";
 
 const StyledSection = styled.section`
     margin: 0 auto;
     max-width: 80%;
-`;
+    ${media.tablet`
+        max-width: 90%;
 
-const Space = styled.div`
-    width: 100%;
-    height: 70px;
+    `}
 `;
 
 const Layout = ({ children }) => {
@@ -33,13 +33,12 @@ const Layout = ({ children }) => {
             <Nav />
             <Left />
             <Right />
-            <Space />
 
             <StyledSection>
                 <main>{children}</main>
             </StyledSection>
             <Footer />
-            <BG></BG>
+            {/* <BG></BG> */}
         </div>
     );
 };

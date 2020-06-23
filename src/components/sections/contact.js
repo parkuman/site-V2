@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "@styles/media";
 import theme from "@styles/theme";
 import { OutlineButton } from "@components/Buttons";
 import config from "../../config";
@@ -24,7 +25,14 @@ const StyledHeader = styled.h1`
         font-family: ${theme.fonts.IBMPlexMono};
         font-size: 1.5rem;
         color: var(--accent-color);
+        ${media.phone`
+            font-size: 1rem;
+        `}
     }
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
 `;
 
 const StyledContent = styled.div`
@@ -42,6 +50,10 @@ const StyledInfo = styled.div`
     font-size: 1.1rem;
     text-align: center;
 
+    ${media.tablet`
+            width: 100%;
+        `}
+
     & a {
         color: var(--accent-color);
         &:hover {
@@ -54,7 +66,7 @@ const Contact = ({ data }) => {
     const { frontmatter, html } = data[0].node;
 
     return (
-        <StyledContact>
+        <StyledContact id="contact">
             <StyledHeader>{frontmatter.title}</StyledHeader>
             <StyledContent>
                 <StyledInfo

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "@styles/media";
 import theme from "@styles/theme";
 import config from "../config";
 
@@ -14,6 +15,9 @@ const StyledRight = styled.div`
     text-align: center;
     bottom: 0;
     right: 0;
+    ${media.tablet`
+        display: none;
+    `}
 
     & a {
         writing-mode: vertical-rl;

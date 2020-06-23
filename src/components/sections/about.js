@@ -3,10 +3,16 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 import theme from "@styles/theme";
+import media from "@styles/media";
 
 const StyledAbout = styled.section`
     padding: 100px 50px;
-    height: 80vh;
+    margin-bottom: 150px;
+    height: auto;
+
+    ${media.tablet`
+            padding: 100px 0;
+    `}
 `;
 
 const StyledHeader = styled.h1`
@@ -22,18 +28,34 @@ const StyledHeader = styled.h1`
         font-family: ${theme.fonts.IBMPlexMono};
         font-size: 1.5rem;
         color: var(--accent-color);
+
+        ${media.phone`
+            font-size: 1rem;
+        `}
     }
+
+    ${media.tablet`
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 20px;
+    `}
 `;
 
 const StyledContent = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+
+    ${media.tablet`
+        flex-direction: column-reverse;
+    `}
 `;
 
 const StyledInfo = styled.div`
     color: var(--text-color-secondary);
     margin-top: 40px;
     width: 60%;
+
     font-size: 1.1rem;
 
     & a {
@@ -42,13 +64,33 @@ const StyledInfo = styled.div`
             color: var(--text-color-primary);
         }
     }
+
+    ${media.tablet`
+        width: 100%;
+    `}
 `;
 
-const StyledProfilePic = styled(Img)`
-    /* position: relative; */
+const StyledProfilePic = styled.div`
+    position: relative;
     width: 40%;
-    max-width: 40vw;
+
     margin-left: 60px;
+
+    ${media.tablet`
+    width: 60%;
+        max-width: 60vw;
+        
+        margin: 0 auto; 
+    `}
+    ${media.phone`
+    font-size: 2rem;
+        width: 100%;
+        max-width: 100vw;
+        margin-left: 0;
+
+
+        
+    `}
 `;
 
 const StyledSkills = styled.ul`
@@ -86,7 +128,9 @@ const About = ({ data }) => {
                     </StyledSkills>
                 </StyledInfo>
 
-                <StyledProfilePic fluid={profilePicFluid} />
+                <StyledProfilePic>
+                    <Img fluid={profilePicFluid} />
+                </StyledProfilePic>
             </StyledContent>
         </StyledAbout>
     );

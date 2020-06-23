@@ -2,13 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import TextLoop from "react-text-loop";
 
+import media from "@styles/media";
 import theme from "@styles/theme";
 import { OutlineButton } from "@components/Buttons";
 import config from "../../config";
 
 const StyledHero = styled.section`
-    padding: 100px 50px;
+    padding: 150px 0 150px 50px;
     height: 100vh;
+    ${media.tablet`
+        
+    `}
+    ${media.phone`
+        padding: 150px 0;
+    `}
 `;
 
 const StyledGreeting = styled.p`
@@ -18,6 +25,10 @@ const StyledGreeting = styled.p`
     padding: 0;
     padding-top: 15vh;
     font-size: 1.2rem;
+
+    ${media.tablet`
+        font-size: 1rem;
+    `}
 `;
 
 const StyledName = styled.h1`
@@ -27,6 +38,13 @@ const StyledName = styled.h1`
     padding: 0;
     font-weight: 500;
     font-style: normal;
+
+    ${media.tablet`
+        font-size: 5.5rem;
+    `}
+    ${media.phone`
+        font-size: 4rem;
+    `}
 `;
 
 const StyledSubtitle = styled.h2`
@@ -37,6 +55,10 @@ const StyledSubtitle = styled.h2`
     margin-top: 10px;
     font-weight: 500;
     font-style: normal;
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
 `;
 
 const StyledInfo = styled.div`
@@ -44,10 +66,17 @@ const StyledInfo = styled.div`
     margin-top: 40px;
     width: 70%;
     font-size: 1.1rem;
+
+    ${media.tablet`
+        width: 90%;
+    `}
+    ${media.phone`
+        font-size: 1rem;
+    `}
 `;
 
 const ScrollText = styled.span`
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     position: relative;
     /* to scooch it up a bit */
     top: -0.5rem;
@@ -61,16 +90,20 @@ const Hero = ({ data }) => {
             <StyledGreeting>{frontmatter.greeting}</StyledGreeting>
             <StyledName>{frontmatter.name}</StyledName>
             <StyledSubtitle>
-                {frontmatter.subtitle}
+                {frontmatter.subtitle + " "}
 
                 <TextLoop>
                     {frontmatter.tools.map((tool, i) => (
-                        <ScrollText key={i}>{tool}</ScrollText>
+                        <ScrollText key={i}>
+                            {tool}&nbsp;&nbsp;&nbsp;&nbsp;
+                        </ScrollText>
                     ))}
                 </TextLoop>
             </StyledSubtitle>
             <StyledInfo dangerouslySetInnerHTML={{ __html: html }}></StyledInfo>
-            <OutlineButton href={"mailto:" + config.email}>Contact</OutlineButton>
+            <OutlineButton href={"mailto:" + config.email}>
+                Contact
+            </OutlineButton>
         </StyledHero>
     );
 };

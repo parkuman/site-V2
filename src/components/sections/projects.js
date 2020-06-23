@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import media from "@styles/media";
 import theme from "@styles/theme";
 
 import EarthIcon from "@components/icons/earth";
@@ -9,6 +10,7 @@ import YoutubeIcon from "@components/icons/youtube";
 
 const StyledProjects = styled.section`
     padding: 100px 0;
+    /* margin: 100px 0; */
 `;
 
 const StyledHeader = styled.h1`
@@ -25,7 +27,15 @@ const StyledHeader = styled.h1`
         font-family: ${theme.fonts.IBMPlexMono};
         font-size: 1.5rem;
         color: var(--accent-color);
+
+        ${media.phone`
+            font-size: 1rem;
+        `}
     }
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
 `;
 
 const StyledList = styled.ul`
@@ -44,6 +54,34 @@ const StyledProject = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &.left {
+        ${media.tablet`
+            flex-direction: column;
+        `}
+    }
+
+    &.right {
+        ${media.tablet`
+            flex-direction: column-reverse;
+        `}
+    }
+
+    &.left .img {
+        margin-right: 80px;
+
+        ${media.tablet`
+            margin: 0 auto 50px;
+        `}
+    }
+
+    &.right .img {
+        margin-left: 80px;
+
+        ${media.tablet`
+            margin: 0 auto 50px;
+        `}
+    }
 `;
 
 const StyledImage = styled(Img)`
@@ -51,12 +89,26 @@ const StyledImage = styled(Img)`
     width: 40%;
     border-radius: 15px;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+
+    ${media.tablet`
+        width: 70%;
+        max-width: 80%;
+        max-height: 50vh;
+        /* max-height: 40vh; */
+    `}
+    ${media.phone`
+        width: 90%;
+        max-width: 100%;
+        max-height: 60vh;
+    `}
 `;
 
 const StyledProjectContent = styled.div`
     width: 80%;
 
-    margin: 0 80px;
+    ${media.phone`
+        width: 100%;
+    `}
 
     & h2 {
         font-size: 3rem;
@@ -64,6 +116,10 @@ const StyledProjectContent = styled.div`
         font-weight: normal;
         color: var(--text-color-primary);
         font-family: ${theme.fonts.IBMPlexMono};
+
+        ${media.phone`
+            font-size: 2rem;
+        `}
     }
 
     & p {
@@ -71,6 +127,11 @@ const StyledProjectContent = styled.div`
 
         font-weight: normal;
         color: var(--text-color-secondary);
+
+        ${media.phone`
+            font-size: 1rem;
+
+        `}
     }
 `;
 
@@ -90,11 +151,20 @@ const StyledProjectTechnologies = styled.ul`
     margin: 0;
     padding: 0;
     font-family: ${theme.fonts.IBMPlexMono};
+    flex-wrap: wrap;
+
 
     color: var(--text-color-secondary);
     & li {
         display: inline-block;
         padding: 0 20px;
+
+        ${media.phone`
+        padding: 0 10px;
+
+
+
+        `}
 
         &:before {
             content: "→ ";
@@ -122,9 +192,9 @@ const Project = ({ node, index }) => {
     const headerPicFluid = frontmatter.headerPic.childImageSharp.fluid;
     return (
         <li>
-            <StyledProject>
+            <StyledProject className={index % 2 === 0 ? "left" : "right"}>
                 {index % 2 === 0 ? (
-                    <StyledImage fluid={headerPicFluid} />
+                    <StyledImage className="img" fluid={headerPicFluid} />
                 ) : null}
                 <StyledProjectContent>
                     <StyledProjectLinks>
@@ -152,7 +222,7 @@ const Project = ({ node, index }) => {
                     <p>{frontmatter.date}</p>
                 </StyledProjectContent>
                 {index % 2 === 0 ? null : (
-                    <StyledImage fluid={headerPicFluid} />
+                    <StyledImage className="img" fluid={headerPicFluid} />
                 )}
             </StyledProject>
         </li>
