@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import theme from "@styles/theme";
-import media from "@styles/media"
+import media from "@styles/media";
 
 const StyledBurger = styled.div`
     width: 2rem;
