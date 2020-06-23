@@ -2,11 +2,11 @@
 title: "About Me"
 profilePic: ./pic.png
 skills:
-    - These
-    - are
-    - my
-    - skills
-    - man
+    - Dart
+    - React
+    - Java
+    - Python
+    - Trying my best
 ---
 
 I’m Parker, an engineer and software developer in my 3rd year of Computer Engineering specialized in Entreprenuership & Innovation @ [Queen’s University](https://www.ece.queensu.ca/undergraduate/ECEi.html).
