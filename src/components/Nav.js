@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 import config from "../config";
 import DarkToggle from "@components/DarkToggle";
+import Burger from "@components/Burger";
 import Logo from "@images/logo.png";
 import theme from "@styles/theme";
+import media from "@styles/media";
 import { OutlineButton } from "@components/Buttons";
 
 const StyledNav = styled.nav`
@@ -22,9 +24,19 @@ const StyledNav = styled.nav`
     background: var(--bg-color);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     font-family: ${theme.fonts.IBMPlexMono};
+
+    ${media.phone`
+        padding: 10px;
+    `}
 `;
 
 const StyledNavItems = styled.ul`
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
     list-style: none;
     & li {
         display: inline;
@@ -32,36 +44,34 @@ const StyledNavItems = styled.ul`
         &:last-of-type {
             margin-right: 10px;
         }
-        /* &:nth-of-type(1):hover ~ .underbar {
-            left: 75px;
-            width: 45px;
-            background: rgba(100, 100, 200, 1);
-        }
-        &:nth-of-type(2):hover ~ .underbar {
-            left: 140px;
-            width: 90px;
-            background: #ff8585;
-        }
-        &:nth-of-type(3):hover ~ .underbar {
-            left: 245px;
-            width: 40px;
-            background: #ffe071;
-        }
-        &:nth-of-type(4):hover ~ .underbar {
-            left: 300px;
-            width: 65px;
-            background: #41a5ee;
-        } */
+
+        ${media.tablet`
+            padding: 30px 0;
+        `}
     }
 
-    /* & .underbar {
-        width: 0;
-        height: 5px;
-        position: relative;
-        left: 75px;
-        background: rgba(100, 100, 200, 0);
-        -webkit-transition: 0.5s ease;
-    } */
+    ${media.tablet`
+        /* display: none; */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        padding: 0 20px;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        background-color: var(--bg-color);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        transition: ${theme.transition};
+
+        transform: ${({ open }) =>
+            open ? "translateX(0)" : "translateX(100%)"};
+    `}
+
+    ${media.phone`
+        width: 90vw;
+        align-items: center;
+    `}
 `;
 
 const StyledNumber = styled.span`
@@ -73,14 +83,16 @@ const StyledLogo = styled.img`
     filter: var(--logo-color);
 `;
 
-const NavItems = () => {
+const NavItems = ({ open, setOpen }) => {
     return (
-        <StyledNavItems>
+        <StyledNavItems open={open}>
             <DarkToggle />
             {config.navLinks.map((item, i) => (
                 <li key={i}>
                     <StyledNumber>0{i + 1}. </StyledNumber>
-                    <Link to={item.url}>{item.name}</Link>
+                    <Link onClick={() => setOpen(false)} to={item.url}>
+                        {item.name}
+                    </Link>
                 </li>
             ))}
             <OutlineButton href="resume.pdf">Resume</OutlineButton>
@@ -90,12 +102,39 @@ const NavItems = () => {
 };
 
 const Nav = () => {
+    const [open, setOpen] = useState(false);
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef);
+
+
+    // https://codesandbox.io/s/outside-alerter-hooks-lmr2y?module=/src/OutsideAlerter.js&file=/src/OutsideAlerter.js:680-899
+    // for closing the menu when user clicks outside of the nav
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+            /**
+             * Alert if clicked on outside of element
+             */
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setOpen(false);
+                }
+            }
+            // Bind the event listener
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+
     return (
-        <StyledNav>
+        <StyledNav ref={wrapperRef}>
             <Link to="/">
                 <StyledLogo src={Logo} alt="logo" />
             </Link>
-            <NavItems />
+            <Burger open={open} setOpen={setOpen} />
+            <NavItems open={open} setOpen={setOpen} />
         </StyledNav>
     );
 };

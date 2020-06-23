@@ -31,6 +31,7 @@ body {
     background: var(--bg-color);
     color: var(--text-color-primary);
 
+
     &.smooth-transition * {
         transition: ${theme.transition};
     }
