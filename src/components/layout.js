@@ -11,7 +11,7 @@ import styled from "styled-components";
 import Nav from "@components/Nav";
 import Left from "@components/Left";
 import Right from "@components/Right";
-import BG from "@components/BG";
+import BackgroundImage from "gatsby-background-image";
 import Footer from "@components/Footer";
 
 import GlobalStyle from "@styles/GlobalStyle";
@@ -26,19 +26,32 @@ const StyledSection = styled.section`
     `}
 `;
 
-const Layout = ({ children }) => {
+const StyledBackgroundImage = styled(BackgroundImage)`
+    width: 100%;
+
+    width: 100%;
+    background-position: top center;
+    /* background-repeat: repeat-y; */
+    background-size: contain;
+    /* background-clip: padding-box;  */
+
+`;
+
+const Layout = ({ children, data }) => {
     return (
         <div id="root">
             <GlobalStyle />
-            <Nav />
-            <Left />
-            <Right />
 
-            <StyledSection>
-                <main>{children}</main>
-            </StyledSection>
-            <Footer />
-            {/* <BG></BG> */}
+            <StyledBackgroundImage fluid={data.bgImage.childImageSharp.fluid}>
+                <Nav />
+                <Left />
+                <Right />
+
+                <StyledSection>
+                    <main>{children}</main>
+                </StyledSection>
+                <Footer />
+            </StyledBackgroundImage>
         </div>
     );
 };

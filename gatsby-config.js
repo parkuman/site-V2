@@ -1,4 +1,5 @@
 const config = require("./src/config");
+const path = require(`path`);
 
 module.exports = {
     siteMetadata: {
@@ -29,6 +30,13 @@ module.exports = {
             options: {
                 name: "content",
                 path: `${__dirname}/content/`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
             },
         },
         `gatsby-plugin-sharp`,

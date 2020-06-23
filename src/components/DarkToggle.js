@@ -13,7 +13,7 @@ const Dark = (props) => {
     const handleClick = () => props.onClick && props.onClick("dark");
 
     return (
-        <StyledButton onClick={handleClick} label>
+        <StyledButton onClick={handleClick} >
             <span role="img" aria-label="dark mode">
                 🌚
             </span>

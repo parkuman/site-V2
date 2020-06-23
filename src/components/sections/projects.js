@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import Fade from "react-reveal/Fade";
+
 import media from "@styles/media";
 import theme from "@styles/theme";
 
@@ -153,7 +155,6 @@ const StyledProjectTechnologies = styled.ul`
     font-family: ${theme.fonts.IBMPlexMono};
     flex-wrap: wrap;
 
-
     color: var(--text-color-secondary);
     & li {
         display: inline-block;
@@ -191,48 +192,55 @@ const Project = ({ node, index }) => {
     const { frontmatter } = node;
     const headerPicFluid = frontmatter.headerPic.childImageSharp.fluid;
     return (
-        <li>
-            <StyledProject className={index % 2 === 0 ? "left" : "right"}>
-                {index % 2 === 0 ? (
-                    <StyledImage className="img" fluid={headerPicFluid} />
-                ) : null}
-                <StyledProjectContent>
-                    <StyledProjectLinks>
-                        {frontmatter.links.map((link, i) => {
-                            var icon = <EarthIcon size="40px" />;
-                            if (link.includes("github"))
-                                icon = <GithubIcon size="35px" />;
-                            else if (link.includes("yout"))
-                                icon = <YoutubeIcon size="40px" />;
+        <Fade bottom distance="80px">
+            <li>
+                <StyledProject className={index % 2 === 0 ? "left" : "right"}>
+                    {index % 2 === 0 ? (
+                        <StyledImage className="img" fluid={headerPicFluid} />
+                    ) : null}
+                    <StyledProjectContent>
+                        <StyledProjectLinks>
+                            {frontmatter.links.map((link, i) => {
+                                var icon = <EarthIcon size="40px" />;
+                                if (link.includes("github"))
+                                    icon = <GithubIcon size="35px" />;
+                                else if (link.includes("yout"))
+                                    icon = <YoutubeIcon size="40px" />;
 
-                            return (
-                                <li key={i}>
-                                    <StyledIcon href={link}>{icon}</StyledIcon>
-                                </li>
-                            );
-                        })}
-                    </StyledProjectLinks>
-                    <h2>{frontmatter.title}</h2>
-                    <StyledProjectTechnologies>
-                        {frontmatter.technologies.map((technology, i) => (
-                            <li key={i}>{technology}</li>
-                        ))}
-                    </StyledProjectTechnologies>
-                    <p>{frontmatter.description}</p>
-                    <p>{frontmatter.date}</p>
-                </StyledProjectContent>
-                {index % 2 === 0 ? null : (
-                    <StyledImage className="img" fluid={headerPicFluid} />
-                )}
-            </StyledProject>
-        </li>
+                                return (
+                                    <li key={i}>
+                                        <StyledIcon href={link}>
+                                            {icon}
+                                        </StyledIcon>
+                                    </li>
+                                );
+                            })}
+                        </StyledProjectLinks>
+                        <h2>{frontmatter.title}</h2>
+                        <StyledProjectTechnologies>
+                            {frontmatter.technologies.map((technology, i) => (
+                                <li key={i}>{technology}</li>
+                            ))}
+                        </StyledProjectTechnologies>
+                        <p>{frontmatter.description}</p>
+                        <p>{frontmatter.date}</p>
+                    </StyledProjectContent>
+                    {index % 2 === 0 ? null : (
+                        <StyledImage className="img" fluid={headerPicFluid} />
+                    )}
+                </StyledProject>
+            </li>
+        </Fade>
     );
 };
 
 const Projects = ({ data }) => {
     return (
         <StyledProjects id="projects">
-            <StyledHeader>Projects</StyledHeader>
+            <Fade bottom distance="80px">
+                <StyledHeader>Projects</StyledHeader>
+            </Fade>
+
             <StyledList>
                 {data.map((data, i) => (
                     <Project node={data.node} key={i} index={i} />

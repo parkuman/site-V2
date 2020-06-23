@@ -11,8 +11,9 @@ import Experience from "@components/sections/experience";
 import Contact from "@components/sections/contact";
 
 const Home = ({ data }) => (
-    <Layout>
+    <Layout data={data}>
         <SEO title="" />
+
         <Hero data={data.hero.edges} />
         <About data={data.about.edges} />
         <Projects data={data.projects.edges} />
@@ -62,7 +63,8 @@ export const pageQuery = graphql`
             }
         }
         projects: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/projects/" } }, sort: {order: ASC, fields: frontmatter___order}
+            filter: { fileAbsolutePath: { regex: "/projects/" } }
+            sort: { order: ASC, fields: frontmatter___order }
         ) {
             edges {
                 node {
@@ -84,20 +86,23 @@ export const pageQuery = graphql`
                 }
             }
         }
-        experience: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/experience/"}}, sort: {order: ASC, fields: frontmatter___order}) {
+        experience: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/experience/" } }
+            sort: { order: ASC, fields: frontmatter___order }
+        ) {
             edges {
-              node {
-                frontmatter {
-                  title
-                  company
-                  startDate
-                  endDate
-                  order
+                node {
+                    frontmatter {
+                        title
+                        company
+                        startDate
+                        endDate
+                        order
+                    }
+                    html
                 }
-                html
-              }
             }
-          }
+        }
         contact: allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/contact/" } }
         ) {
@@ -107,6 +112,14 @@ export const pageQuery = graphql`
                         title
                     }
                     html
+                }
+            }
+        }
+
+        bgImage: file(relativePath: { eq: "bg.png" }) {
+            childImageSharp {
+                fluid(quality: 100) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }

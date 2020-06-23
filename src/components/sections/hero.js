@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 import TextLoop from "react-text-loop";
 
 import media from "@styles/media";
@@ -86,25 +87,29 @@ const Hero = ({ data }) => {
     const { frontmatter, html } = data[0].node;
 
     return (
-        <StyledHero>
-            <StyledGreeting>{frontmatter.greeting}</StyledGreeting>
-            <StyledName>{frontmatter.name}</StyledName>
-            <StyledSubtitle>
-                {frontmatter.subtitle + " "}
+        <Fade bottom distance="80px">
+            <StyledHero>
+                <StyledGreeting>{frontmatter.greeting}</StyledGreeting>
+                <StyledName>{frontmatter.name}</StyledName>
+                <StyledSubtitle>
+                    {frontmatter.subtitle + " "}
 
-                <TextLoop>
-                    {frontmatter.tools.map((tool, i) => (
-                        <ScrollText key={i}>
-                            {tool}&nbsp;&nbsp;&nbsp;&nbsp;
-                        </ScrollText>
-                    ))}
-                </TextLoop>
-            </StyledSubtitle>
-            <StyledInfo dangerouslySetInnerHTML={{ __html: html }}></StyledInfo>
-            <OutlineButton href={"mailto:" + config.email}>
-                Contact
-            </OutlineButton>
-        </StyledHero>
+                    <TextLoop>
+                        {frontmatter.tools.map((tool, i) => (
+                            <ScrollText key={i}>
+                                {tool}&nbsp;&nbsp;&nbsp;&nbsp;
+                            </ScrollText>
+                        ))}
+                    </TextLoop>
+                </StyledSubtitle>
+                <StyledInfo
+                    dangerouslySetInnerHTML={{ __html: html }}
+                ></StyledInfo>
+                <OutlineButton href={"mailto:" + config.email}>
+                    Contact
+                </OutlineButton>
+            </StyledHero>
+        </Fade>
     );
 };
 export default Hero;

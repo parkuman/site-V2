@@ -1,5 +1,7 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 import styled from "styled-components";
+
 import media from "@styles/media";
 import theme from "@styles/theme";
 
@@ -127,25 +129,30 @@ const Job = ({ node, index }) => {
     const { frontmatter, html } = node;
 
     return (
-        <li>
-            <StyledJob>
-                <h2>{frontmatter.title}</h2>
-                <h3>{frontmatter.company}</h3>
-                <h4>
-                    {frontmatter.startDate} -{" "}
-                    {frontmatter.endDate ? frontmatter.endDate : "Present"}
-                </h4>
-                <div dangerouslySetInnerHTML={{ __html: html }}></div>
-            </StyledJob>
-            <hr></hr>
-        </li>
+        <Fade bottom distance="80px">
+            <li>
+                <StyledJob>
+                    <h2>{frontmatter.title}</h2>
+                    <h3>{frontmatter.company}</h3>
+                    <h4>
+                        {frontmatter.startDate} -{" "}
+                        {frontmatter.endDate ? frontmatter.endDate : "Present"}
+                    </h4>
+                    <div dangerouslySetInnerHTML={{ __html: html }}></div>
+                </StyledJob>
+                <hr></hr>
+            </li>
+        </Fade>
     );
 };
 
 const Experience = ({ data }) => {
     return (
         <StyledExperience id="experience">
-            <StyledHeader>Experience</StyledHeader>
+            <Fade bottom distance="80px">
+                <StyledHeader>Experience</StyledHeader>
+            </Fade>
+
             <StyledList>
                 {data.slice(0, 4).map((data, i) => (
                     <Job node={data.node} key={i} index={i} />

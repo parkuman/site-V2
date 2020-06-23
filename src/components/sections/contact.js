@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 
 import media from "@styles/media";
@@ -66,17 +67,19 @@ const Contact = ({ data }) => {
     const { frontmatter, html } = data[0].node;
 
     return (
-        <StyledContact id="contact">
-            <StyledHeader>{frontmatter.title}</StyledHeader>
-            <StyledContent>
-                <StyledInfo
-                    dangerouslySetInnerHTML={{ __html: html }}
-                ></StyledInfo>
-                <OutlineButton href={"mailto:" + config.email}>
-                    Contact
-                </OutlineButton>
-            </StyledContent>
-        </StyledContact>
+        <Fade bottom distance="80px">
+            <StyledContact id="contact">
+                <StyledHeader>{frontmatter.title}</StyledHeader>
+                <StyledContent>
+                    <StyledInfo
+                        dangerouslySetInnerHTML={{ __html: html }}
+                    ></StyledInfo>
+                    <OutlineButton href={"mailto:" + config.email}>
+                        Contact
+                    </OutlineButton>
+                </StyledContent>
+            </StyledContact>
+        </Fade>
     );
 };
 

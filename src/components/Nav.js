@@ -10,6 +10,8 @@ import theme from "@styles/theme";
 import media from "@styles/media";
 import { OutlineButton } from "@components/Buttons";
 
+
+
 const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
@@ -19,10 +21,20 @@ const StyledNav = styled.nav`
     left: 0;
     width: 100%;
     padding: 10px 40px;
-    height: 70px;
     z-index: 100000000;
     background: var(--bg-color);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    height: ${({ scrollDirection }) =>
+        scrollDirection === "none" ? "100px" : "70px"};
+    box-shadow: ${({ scrollDirection }) =>
+        scrollDirection === "up"
+            ? `0 10px 30px -10px rgba(0, 0, 0, 0.3)`
+            : "none"};
+    transform: translateY(
+        ${({ scrollDirection }) =>
+            scrollDirection === "down" ? "-70px" : "0px"}
+    );
+
+    transition: ${theme.transition};
     font-family: ${theme.fonts.IBMPlexMono};
 
     ${media.phone`
@@ -103,9 +115,45 @@ const NavItems = ({ open, setOpen }) => {
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
+
+    const [scrollDirection, setScrollDirection] = useState("none");
+
+    const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+
+    useEffect(() => {
+        setTimeout(
+            () =>
+                window.addEventListener("scroll", () =>
+                    handleScroll()
+                ),
+            100
+        );
+
+        return () => window.removeEventListener("scroll", () => handleScroll());
+    }, []);
+
+
+    const handleScroll = () => {
+        const currentScrollPosition = window.scrollY;
+        const diff = prevScrollPosition - currentScrollPosition;
+
+
+
+        if (diff > 0) {
+            setScrollDirection("down");
+        } else if (diff < 0) {
+
+            setScrollDirection("up");
+        } else {
+
+            setScrollDirection("none");
+        }
+
+        
+    };
+
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
-
 
     // https://codesandbox.io/s/outside-alerter-hooks-lmr2y?module=/src/OutsideAlerter.js&file=/src/OutsideAlerter.js:680-899
     // for closing the menu when user clicks outside of the nav
@@ -129,7 +177,7 @@ const Nav = () => {
     }
 
     return (
-        <StyledNav ref={wrapperRef}>
+        <StyledNav ref={wrapperRef} scrollDirection={scrollDirection}>
             <Link to="/">
                 <StyledLogo src={Logo} alt="logo" />
             </Link>

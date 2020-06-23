@@ -5,8 +5,8 @@ technologies:
     - React
     - Gatsby
     - Javascript (ES6, JSX)
+    - GraphQL
     - SCSS
-    - HTML
 headerPic: ./sc.png
 description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
 links:

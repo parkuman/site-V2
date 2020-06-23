@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 import Img from "gatsby-image";
 
 import theme from "@styles/theme";
@@ -116,23 +117,25 @@ const About = ({ data }) => {
     const profilePicFluid = frontmatter.profilePic.childImageSharp.fluid;
 
     return (
-        <StyledAbout>
-            <StyledHeader id="about">{frontmatter.title}</StyledHeader>
-            <StyledContent>
-                <StyledInfo>
-                    <div dangerouslySetInnerHTML={{ __html: html }}></div>
-                    <StyledSkills>
-                        {frontmatter.skills.map((skill, i) => (
-                            <li key={i}>{skill}</li>
-                        ))}
-                    </StyledSkills>
-                </StyledInfo>
+        <Fade bottom distance="80px">
+            <StyledAbout>
+                <StyledHeader id="about">{frontmatter.title}</StyledHeader>
+                <StyledContent>
+                    <StyledInfo>
+                        <div dangerouslySetInnerHTML={{ __html: html }}></div>
+                        <StyledSkills>
+                            {frontmatter.skills.map((skill, i) => (
+                                <li key={i}>{skill}</li>
+                            ))}
+                        </StyledSkills>
+                    </StyledInfo>
 
-                <StyledProfilePic>
-                    <Img fluid={profilePicFluid} />
-                </StyledProfilePic>
-            </StyledContent>
-        </StyledAbout>
+                    <StyledProfilePic>
+                        <Img fluid={profilePicFluid} />
+                    </StyledProfilePic>
+                </StyledContent>
+            </StyledAbout>
+        </Fade>
     );
 };
 export default About;
