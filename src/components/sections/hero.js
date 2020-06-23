@@ -57,6 +57,14 @@ const StyledSubtitle = styled.h2`
     font-weight: 500;
     font-style: normal;
 
+    & br {
+        display: none;
+
+        ${media.tablet`
+            display: block;
+        `}
+    }
+
     ${media.tablet`
         font-size: 3rem;
     `}
@@ -93,7 +101,7 @@ const Hero = ({ data }) => {
                 <StyledName>{frontmatter.name}</StyledName>
                 <StyledSubtitle>
                     {frontmatter.subtitle + " "}
-
+                    <br />
                     <TextLoop>
                         {frontmatter.tools.map((tool, i) => (
                             <ScrollText key={i}>
