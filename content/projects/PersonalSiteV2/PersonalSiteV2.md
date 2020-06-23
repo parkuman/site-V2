@@ -8,10 +8,10 @@ technologies:
     - GraphQL
     - SCSS
 headerPic: ./sc.png
-description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
+description: "New & improved site. Inspired by brittanychiang.com"
 links:
     - r
 order: 2
 ---
 
-Here is the html content yo
+New & improved site. Heavily inspired by [brittanychiang.com](https://brittanychiang.com)

@@ -5,11 +5,11 @@ technologies:
     - HTML
     - CSS
 headerPic: ./sc.png
-description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
+description: "My first site I made after learning a bit of web development!"
 links:
     - https://github.com/parkuman/parkuman.github.io
     - https://parkuman.github.io
 order: 6
 ---
 
-Here is the html content yo
+My first site I made after learning a bit of web development!

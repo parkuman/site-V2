@@ -7,7 +7,7 @@ technologies:
     - Arduino
     - NFC
 headerPic: ./sc.jpg
-description: "Brief Description Brief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief DescriptionBrief Description"
+description: "An alarm clock you can't say no to! App-controlled alarm clock only disabled by an NFC terminal somewhere in your home. Made for MLH Hack At Home."
 links:
     - https://github.com/parkuman/AlarMe
 order: 1
