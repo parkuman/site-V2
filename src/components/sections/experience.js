@@ -7,6 +7,10 @@ import theme from "@styles/theme";
 
 const StyledExperience = styled.section`
     padding: 100px 0;
+
+    ${media.tablet`
+        padding: 50px 0;
+    `}
 `;
 
 const StyledHeader = styled.h1`
@@ -33,9 +37,7 @@ const StyledHeader = styled.h1`
     ${media.tablet`
         font-size: 3rem;
     `}
-    ${media.phone`
-        text-align: center;
-    `}
+    
 `;
 
 const StyledList = styled.ul`

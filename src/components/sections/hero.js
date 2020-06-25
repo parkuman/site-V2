@@ -11,11 +11,9 @@ import config from "../../config";
 const StyledHero = styled.section`
     padding: 150px 0 300px 50px;
     /* height: 100vh; */
-    ${media.tablet`
-        
-    `}
+    
     ${media.phone`
-        padding: 150px 0;
+        padding: 50px 0;
     `}
 `;
 

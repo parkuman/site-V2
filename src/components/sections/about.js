@@ -12,7 +12,7 @@ const StyledAbout = styled.section`
     height: auto;
 
     ${media.tablet`
-            padding: 100px 0;
+            padding: 50px 0;
     `}
 `;
 
@@ -39,6 +39,9 @@ const StyledHeader = styled.h1`
         font-size: 3rem;
         text-align: center;
         margin-bottom: 20px;
+    `}
+    ${media.phone`
+        text-align: left;
     `}
 `;
 
