@@ -107,7 +107,7 @@ const NavItems = ({ open, setOpen }) => {
                     </Link>
                 </li>
             ))}
-            <OutlineButton href="resume.pdf">Resume</OutlineButton>
+            <OutlineButton href="prowe_resume.pdf">Resume</OutlineButton>
             <div className="underbar"></div>
         </StyledNavItems>
     );
