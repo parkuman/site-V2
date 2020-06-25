@@ -6,8 +6,6 @@ module.exports = {
         "Parker Rowe, Parker, Rowe, Queens, Engineering, Computer Engineering, ECEi, Entreprenuership, Innovation",
     siteUrl: "https://prowe.ca",
     siteLanguage: "en_CA",
-    googleAnalyticsID: "",
-    googleVerification: "",
     name: "Parker Rowe",
     location: "Kingston, ON",
     email: "parker.a.rowe@gmail.com",
