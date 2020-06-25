@@ -60,9 +60,6 @@ module.exports = {
             options: {
                 // The property ID; the tracking code won't be generated without it
                 trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "none",
-
-                // Setting this parameter is optional
-                anonymize: true,
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
