@@ -11,6 +11,7 @@ tools:
     - 🐍 Python
     - ☕ Java
     - 💾 Arduino
+    - 💖 Love
 ---
 
 Just a computer engineering student based in ON Canada. I love tinkering with tech to bring people’s ideas to life! Always actively looking for new ways to enter the tech industry, feel free to reach out for a chat! ☕
