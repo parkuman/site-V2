@@ -2,8 +2,8 @@
 title: "AI Team Manager"
 company: "Queen's Robomaster Design Team"
 startDate: "May 2019"
-endDate: "May 2020"
-order: 4
+endDate: 
+order: 2
 ---
 
 • Lead a team of 20 students toward learning and applying artificial intelligence using Python with Tensorflow to automate robots for the competitive DJI Robomaster competition in Shenzhen, China

@@ -3,10 +3,10 @@ title: "Web Developer & Marketing Coordinator"
 company: "Canadian Undergraduate Conference on AI"
 startDate: "May 2020"
 endDate:
-order: 1
+order: 3
 ---
 
-• Develop CUCAI 2021's [new website](http://cucai.ca/)  using Reactjs 
+• Develop CUCAI 2021's [new website](http://cucai.ca/)  using Reactjs & Gatsby
 
 • Utilize Figma to create marketing branding guidelines, social media posts & banners to successfuly grow interest in North America's largest undergraduate conference on AI
 
