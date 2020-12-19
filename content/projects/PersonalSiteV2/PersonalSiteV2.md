@@ -11,7 +11,7 @@ headerPic: ./sc.png
 description: "New & improved site. Inspired by brittanychiang.com"
 links:
     - r
-order: 2
+order: 3
 ---
 
-New & improved site. Heavily inspired by [brittanychiang.com](https://brittanychiang.com)
+New & improved site. Style heavily inspired by [brittanychiang.com](https://brittanychiang.com)
