@@ -4,3 +4,10 @@
   status = 200
   force = true # COMMENT: ensure that we always redirect
   headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/chat"
+  to = "https://prowe-deno-chat.herokuapp.com/"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}
