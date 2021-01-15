@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "https://chat.prowe.ca"
-  to = "https://prowe-deno-chat.herokuapp.com/"
-  status = 301
-  force = true
