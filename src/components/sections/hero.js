@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 import TextLoop from "react-text-loop";
 
 import media from "@styles/media";
@@ -95,7 +94,6 @@ const Hero = ({ data }) => {
     const { frontmatter, html } = data[0].node;
 
     return (
-        <Fade bottom distance="80px">
             <StyledHero>
                 <StyledGreeting>{frontmatter.greeting}</StyledGreeting>
                 <StyledName>{frontmatter.name}</StyledName>
@@ -117,7 +115,6 @@ const Hero = ({ data }) => {
                     Contact
                 </OutlineButton>
             </StyledHero>
-        </Fade>
     );
 };
 export default Hero;

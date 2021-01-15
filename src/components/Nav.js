@@ -24,14 +24,14 @@ const StyledNav = styled.nav`
     z-index: 100000000;
     background: var(--bg-color);
     height: ${({ scrollDirection }) =>
-        scrollDirection === "none" ? "100px" : "70px"};
+        scrollDirection === "none" ? "100px" : "60px"};
     box-shadow: ${({ scrollDirection }) =>
         scrollDirection === "up"
             ? `0 10px 30px -10px rgba(0, 0, 0, 0.3)`
             : "none"};
     transform: translateY(
         ${({ scrollDirection }) =>
-            scrollDirection === "down" ? "-70px" : "0px"}
+            scrollDirection === "down" ? "-60px" : "0px"}
     );
 
     transition: ${theme.transition};
@@ -91,7 +91,7 @@ const StyledNumber = styled.span`
 `;
 
 const StyledLogo = styled.img`
-    height: 70px;
+    height: 60px;
     filter: var(--logo-color);
 `;
 

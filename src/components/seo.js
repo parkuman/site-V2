@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import favicon16 from "@images/favicon16.png";
 import favicon32 from "@images/favicon32.png";
-import favicon64 from "@images/favicon64.png";
+import favicon192 from "@images/favicon192.png";
 
 function SEO({ description, lang, meta, title }) {
     const { site } = useStaticQuery(
@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
                 {
                     rel: "shortcut icon",
                     type: "image/png",
-                    href: `${favicon64}`,
+                    href: `${favicon192}`,
                 },
             ]}
             meta={[

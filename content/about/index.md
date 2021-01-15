@@ -16,6 +16,3 @@ Ever since I was young I’ve loved to learn about technology and how I can buil
 Outside class I’m a leader in multiple teams which teach and spread interest in tech and engineering.
 
 Aside from tech, I love camping 🏕, playing guitar 🎸 and spending time with friends.
-
-
-Here are some things I am good at:

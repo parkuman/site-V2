@@ -8,8 +8,6 @@ tools:
     - 👁 OpenCV
     - ⚛ React
     - 🎩 Gatsby
-    - 🐦 Flutter
-    - ☕ Java
     - 💾 Arduino
     - 💖 Love
 ---

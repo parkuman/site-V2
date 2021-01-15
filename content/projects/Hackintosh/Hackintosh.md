@@ -12,5 +12,5 @@ description: "Had a really fun time doing a hackintosh + laptop upgrade for my M
 Huge credit goes to Profzei who maintains the repo for the Matebook X Pro hackintosh."
 links:
     - https://github.com/profzei/Matebook-X-Pro-2018
-order: 1
+order: 2
 ---
