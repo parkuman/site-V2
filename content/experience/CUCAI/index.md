@@ -2,7 +2,7 @@
 title: "Web Developer"
 company: "Canadian Undergraduate Conference on AI"
 startDate: "May 2020"
-endDate:
+endDate: "May 2021"
 order: 4
 ---
 

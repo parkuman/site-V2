@@ -4,6 +4,9 @@ name: "Parker Rowe"
 subtitle: "I build things with"
 tools:
     - 👨‍💻 Javascript
+    - ⏭ Nextjs
+    - 🚢 Docker
+    - 🐬 MySQL
     - 🐍 Python
     - 👁 OpenCV
     - ⚛ React

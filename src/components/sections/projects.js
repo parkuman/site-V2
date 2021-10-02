@@ -249,7 +249,7 @@ const Projects = ({ data }) => {
         </Fade>
 
         <StyledList>
-          {data.map((data, i) => (
+          {data.slice(0, 6).map((data, i) => (
             <Project node={data.node} key={i} index={i} />
           ))}
         </StyledList>

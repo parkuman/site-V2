@@ -6,12 +6,11 @@ technologies:
     - Gatsby
     - Javascript (ES6, JSX)
     - GraphQL
-    - SCSS
 headerPic: ./sc.png
 description: "New & improved site. Inspired by brittanychiang.com"
 links:
     - r
-order: 4
+order: 5
 ---
 
 New & improved site. Style heavily inspired by [brittanychiang.com](https://brittanychiang.com)
